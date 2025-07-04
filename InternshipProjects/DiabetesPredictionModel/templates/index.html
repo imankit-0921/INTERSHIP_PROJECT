@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; background-color: #f4f4f9; }
+        form { max-width: 500px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        input, button { display: block; width: 100%; margin: 10px 0; padding: 10px; font-size: 16px; }
+        button { background-color: #5cb85c; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #4cae4c; }
+        .result { text-align: center; margin-top: 20px; font-size: 18px; color: #333; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Diabetes Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="pregnancies">Pregnancies:</label>
+        <input type="number" id="pregnancies" name="Pregnancies" required>
+
+        <label for="glucose">Glucose:</label>
+        <input type="number" id="glucose" name="Glucose" required>
+
+        <label for="bloodPressure">Blood Pressure:</label>
+        <input type="number" id="bloodPressure" name="BloodPressure" required>
+
+        <label for="skinThickness">Skin Thickness:</label>
+        <input type="number" id="skinThickness" name="SkinThickness" required>
+
+        <label for="insulin">Insulin:</label>
+        <input type="number" id="insulin" name="Insulin" required>
+
+        <label for="bmi">BMI:</label>
+        <input type="number" step="any" id="bmi" name="BMI" required>
+
+        <label for="diabetesPedigreeFunction">Diabetes Pedigree Function:</label>
+        <input type="number" step="any" id="diabetesPedigreeFunction" name="DiabetesPedigreeFunction" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="Age" required>
+
+        <button type="submit">Predict</button>
+    </form>
+    <div class="result">{{ prediction_text }}</div>
+</body>
+</html>
